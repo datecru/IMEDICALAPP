@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: lightgray;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#cards_container {
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-column-gap: 24px;
+  grid-row-gap: 48px;
+  padding: 0 20px;
+}
+
+.article-image{
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.article{
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+
+#busqueda{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#barra-busqueda{
+  width: 85%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+
+
+/* CSS */
+.button-2 {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 38px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.seccion-busqueda {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.seccion-clima {
+  display: flex;
+  align-items: baseline;
+  padding: 0 20px;
+}
+
+.descripcion-clima {
+  margin: 0 20px;
+}
+
+#busquedas-recientes{
+  color: #b1aaaa;
+  text-size-adjust: 20px;
+  font-weight: 600;
+}
+
+.lista{
+
+}
+
+.font-lista{
+  font-weight: 200;
+  display: flex;
+  gap: 4px;
+  margin: 24px 40px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.font-lista-div{
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
