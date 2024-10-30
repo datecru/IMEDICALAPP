@@ -2,13 +2,13 @@
 
 REM === Configuracion, ajuste estos valores para la base de datos que necesite ===
 
-set MYSQL_USER = root
-set MYSQL_PASSWORD = 247755ca80
+set MYSQL_USER=root
+set MYSQL_PASSWORD=247755ca80
 
 REM === Obtener el directorio del batch del script
-set SCRIPT_DIR = %~dp0
-set PROJECT_DIRECTORY = %SCRIPT_DIR%..
-set SQL_FILE_PATH = %PROJECT_DIRECTORY%\crear_base_de_datos.sql
+set SCRIPT_RUN_DIR=%~dp0
+set PROJECT_DIRECTORY=%SCRIPT_RUN_DIR%IMEDICALAPP
+set SQL_FILE_PATH=%PROJECT_DIRECTORY%\IMEDICALAPP\crear_base_de_datos.sql
 
 REM === Clonar el Repositorio ===
 IF NOT EXIST "%PROJECT_DIRECTORY%" (
@@ -31,7 +31,12 @@ echo "Iniciando IMEDICALAPP...."
 
 cd /d "%PROJECT_DIRECTORY%\app"
 
-npm install
+REM === Instalar dependencias de Node.js solo si no existe ===
+IF NOT EXIST "package-lock.json" {
+    npm install
+}
+
+
 npm start
 
 
