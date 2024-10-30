@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS recentsearches;
+
 CREATE DATABASE IF NOT EXISTS imedical_database;
 USE imedical_database;
 

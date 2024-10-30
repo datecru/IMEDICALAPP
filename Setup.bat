@@ -8,7 +8,7 @@ set MYSQL_PASSWORD=247755ca80
 REM === Obtener el directorio del batch del script
 set SCRIPT_RUN_DIR=%~dp0
 set PROJECT_DIRECTORY=%SCRIPT_RUN_DIR%IMEDICALAPP
-set SQL_FILE_PATH=%PROJECT_DIRECTORY%\IMEDICALAPP\crear_base_de_datos.sql
+set SQL_FILE_PATH=%PROJECT_DIRECTORY%\crear_base_de_datos.sql
 
 REM === Clonar el Repositorio ===
 IF NOT EXIST "%PROJECT_DIRECTORY%" (
