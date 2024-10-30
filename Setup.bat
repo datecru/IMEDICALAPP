@@ -27,6 +27,25 @@ if %errorlevel% neq 0 (
 
 echo "Base de datos creada"
 
+pause
+
+REM === Crear archivo start.bat en el mismo directorio Setup.bat ===
+echo @echo off > "%~dp0start.bat"
+echo REM === Iniciar Interfaz web === >> "%~dp0start.bat"
+echo cd /d %PROJECT_DIRECTORY%\app >> "%~dp0start.bat"
+echo start cmd /k "npm start" >> "%~dp0start.bat"
+echo. >> "%~dp0start.bat" 
+echo REM === Iniciar .NET === >> "%~dp0start.bat"
+echo cd /d "%PROJECT_DIRECTORY%" >> "%~dp0start.bat"
+echo start cmd /k dotnet run >> "%~dp0start.bat"
+echo. >> "%~dp0start.bat" 
+echo REM === Espere unos segundos antes de ejecutar el siguiente comando === >> "%~dp0start.bat"
+echo timeout /t 5 /nobreak ^> nul >> "%~dp0start.bat"
+echo. >> "%~dp0start.bat" 
+echo pause >> "%~dp0start.bat"
+
+echo "start.bat creado en %~dp0"
+
 echo "Iniciando IMEDICALAPP...."
 
 cd /d "%PROJECT_DIRECTORY%\app"
@@ -34,13 +53,10 @@ cd /d "%PROJECT_DIRECTORY%\app"
 REM === Instalar dependencias de Node.js solo si no existe ===
 IF NOT EXIST "package-lock.json" {
     npm install
+    if %errorlevel% neq 0 (
+        echo "Error durante la instalacion de npm..."
+        pause
+        exit /b 1
+    )
 }
-
-
-npm start
-
-
-
-cd /d "%PROJECT_DIRECTORY%"
-dotnet run
 
