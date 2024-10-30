@@ -1,49 +1,102 @@
-Este proyecto solicita a la api del clima la ciudad que se ingresa, y devuelve los solicitado siendo esto, el nombre de la ciudad, temperatura humedad y descripcion en español y unidades metricas.
+### **IMEDICALAPP**
 
-En relacion a las noticias, solicita las noticias que hacen referencia a la peticion que se hizo en el clima, y devuelve las noticias en orden cronologico.
+Este proyecto interactúa con una API del clima para obtener información sobre una ciudad específica y muestra resultados en español con unidades métricas. Además, busca noticias relacionadas con la ciudad y muestra un historial de las últimas 5 búsquedas realizadas.
 
-La seccion de busquedas recientes, el programa captura las peticiones que se hacen y las almacena en la base de datos, para despues desplegar solamente las ultimas 5 peticiones que se han realizado
+### **Prerrequisitos**
 
+- **.NET SDK:** Descárgalo desde <https://dotnet.microsoft.com/download>
 
+- **MySQL:** Necesario para gestionar la base de datos
 
+- **Git:** Utilizado para clonar el repositorio
 
+### **Instalación y Ejecución**
 
-Prerequisitos
+#### **Método Rápido:**
 
-.NET SDK ----- Descargarlo desde https://dotnet.microsoft.com/download
-MySQL
-Git   -------- Usado para clonar el repositorio
+- Descarga solamente el archivo `Setup.bat` para una instalación automatica.
+- Se creara un archivo `start.bat` este iniciara automaticamente la interfaz web junto con el .NET para el backend
 
-Para instalar y ejecutar use el archivo setup.bat este ejecutara todo lo necesario para la instalacion 
+#### **Método Manual:**
 
+1. **Clonar el Repositorio:**
 
+   Bash
 
+   ```
+   git clone https://github.com/datecru/IMEDICALAPP.git
 
+   ```
 
-Instalación y uso manual
--------------------------------------------------------------------------------------------------
----------Instalacion
+  
 
-----En la terminal navegue al directorio deseado y escriba el siguiente comando para clonar el repositorio
+2. **Acceder al Directorio:**
 
-git clone https://github.com/datecru/IMEDICALAPP.git
+   Bash
 
-----Navegue al directorio del proyecto
+   ```
+   cd IMEDICALAPP
 
-CD IMEDICALAPP
+   ```
 
-----------Configuracion de la base de datos
+  
 
-----Abrir el Program.cs con el editor y editar la linea 47, replasar el nombre de la base de datos, usuario y contraseña
-var connectionString = "Server=localhost;Port=3306;Database=imedical_database;User Id=root;Password=247755ca80;";
+3. **Configurar la Base de Datos:**
 
-----------Iniciar la aplicacion
-----Navegue al directorio IMEDICALAPP/app y ejecute el siguiente comando en la terminal
-npm install
-npm run start
-----Desde el directorio IMEDICALAPP escriba el comando en la terminal
-dotnet run
+   - Editar el archivo `Program.cs` y modificar la cadena de conexión en la línea 47:
 
+     C#
 
+     ```
+     var connectionString = "Server=localhost;Port=3306;Database=imedical_database;User Id=root;Password=247755ca80;";
 
+     ```
 
+    
+
+4. **Iniciar la Aplicación:**
+
+   - Desde la terminal, dentro del directorio `IMEDICALAPP/app`:
+
+     Bash
+
+     ```
+     npm install
+     npm run start
+
+     ```
+
+    
+
+   - O desde el directorio raíz del proyecto:
+
+     Bash
+
+     ```
+     dotnet run
+
+     ```
+
+    
+
+### **Funcionalidades**
+
+- **Búsqueda de Clima:**
+
+  - Ingresa el nombre de una ciudad.
+
+  - Obtiene la temperatura, humedad y una descripción del clima.
+
+  - Muestra los resultados en español y unidades métricas.
+
+- **Búsqueda de Noticias:**
+
+  - Encuentra noticias relacionadas con la ciudad buscada.
+
+  - Ordena las noticias por fecha.
+
+- **Historial de Búsquedas:**
+
+  - Almacena las últimas 5 búsquedas en una base de datos.
+
+  - Muestra el historial de búsquedas recientes.
